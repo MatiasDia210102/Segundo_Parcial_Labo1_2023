@@ -1,0 +1,16 @@
+from main import main, definir_sonido, leer_imagen
+import pygame
+pygame.init()
+pygame.mixer.init()
+pantalla = pygame.display.set_mode((1020, 850)) #ventana (ancho, altura)
+pygame.display.set_caption("Mi Primer Juego")
+fondo_inicio = leer_imagen("Fondo.jpg", (1020, 850))
+fondo_juego = leer_imagen("Espacio.png", (1020, 850))
+titulo = leer_imagen("Galaxy.png", (450, 200))
+sonido_fondo = definir_sonido("Sonido.mp3", 0.7, 0.5) # Musica De Fondo
+laser_sonido = definir_sonido("Laser_Sonido.mp3", 0.9, 0.2)
+lista_puntajes = {}
+lista_puntajes['jugador'] = []
+tiempo_de_juego = 0
+tiempo = 0
+main(pantalla, fondo_inicio, fondo_juego, titulo, sonido_fondo, laser_sonido, lista_puntajes, tiempo_de_juego, tiempo)
